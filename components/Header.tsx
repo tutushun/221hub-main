@@ -64,7 +64,7 @@ export default function Header() {
                   </svg>
                 </button>
                 <div className={`${styles.dropdownMenu} ${openDropdown === item.label.ja ? styles.open : ''}`}>
-                  {item.items.map((subItem, subIndex) => (
+                  {item.items?.map((subItem, subIndex) => (
                     <Link key={subIndex} href={subItem.href} className={styles.dropdownItem}>
                       <span data-lang="ja">{subItem.label.ja}</span>
                       <span data-lang="en">{subItem.label.en}</span>
