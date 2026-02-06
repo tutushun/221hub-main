@@ -4,28 +4,40 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
-const navigation = [
+interface NavItemWithItems {
+  label: { ja: string; en: string };
+  items: { href: string; label: { ja: string; en: string } }[];
+}
+
+interface NavItemWithHref {
+  href: string;
+  label: { ja: string; en: string };
+}
+
+type NavItem = NavItemWithItems | NavItemWithHref;
+
+const navigation: NavItem[] = [
   {
     label: { ja: '事業内容', en: 'Business' },
     items: [
       { href: '/jikomap', label: { ja: 'JikoMap', en: 'JikoMap' } },
       { href: '/foreign-support', label: { ja: '外国人向け住居支援', en: 'Foreign Support' } },
       { href: '/asset-renewal', label: { ja: '資産価値再生', en: 'Asset Renewal' } },
-      { href: '/b2b', label: { ja: '法人向けサービス', en: 'B2B Services' } },
     ],
   },
   {
     label: { ja: '企業情報', en: 'Company' },
     items: [
       { href: '/company', label: { ja: '会社概要', en: 'Company' } },
-      { href: '/about', label: { ja: '我々について', en: 'About Us' } },
-      { href: '/vision', label: { ja: 'IRビジョン', en: 'IR Vision' } },
-      { href: '/policy', label: { ja: '方針・信頼性', en: 'Policy' } },
     ],
   },
   { href: '/insights', label: { ja: 'インサイト', en: 'Insights' } },
   { href: '/contact', label: { ja: 'お問い合わせ', en: 'Contact' } },
 ];
+
+function hasItems(item: NavItem): item is NavItemWithItems {
+  return 'items' in item;
+}
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +61,7 @@ export default function Header() {
 
         <nav className={styles.nav}>
           {navigation.map((item, index) => (
-            'items' in item ? (
+            hasItems(item) ? (
               <div
                 key={index}
                 className={styles.dropdown}
@@ -64,7 +76,7 @@ export default function Header() {
                   </svg>
                 </button>
                 <div className={`${styles.dropdownMenu} ${openDropdown === item.label.ja ? styles.open : ''}`}>
-                  {item.items?.map((subItem, subIndex) => (
+                  {item.items.map((subItem, subIndex) => (
                     <Link key={subIndex} href={subItem.href} className={styles.dropdownItem}>
                       <span data-lang="ja">{subItem.label.ja}</span>
                       <span data-lang="en">{subItem.label.en}</span>
@@ -107,7 +119,7 @@ export default function Header() {
       <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}>
         <nav className={styles.mobileNavContent}>
           {navigation.map((item, index) => (
-            'items' in item ? (
+            hasItems(item) ? (
               <div key={index} className={styles.mobileNavGroup}>
                 <span className={styles.mobileNavGroupLabel}>{item.label.ja}</span>
                 {item.items.map((subItem, subIndex) => (
