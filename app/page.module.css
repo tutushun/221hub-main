@@ -1,0 +1,467 @@
+.page {
+  padding-top: var(--header-height);
+}
+
+/* Hero Section */
+.hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  background: var(--gradient-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: 600px;
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+.heroTitle {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroLead {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.heroKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.keyword {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.keyword svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-muted);
+}
+
+.heroCta {
+  display: flex;
+  gap: 16px;
+}
+
+.heroVisual {
+  position: relative;
+  height: 500px;
+}
+
+.heroCanvas {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  border-radius: var(--radius-2xl);
+}
+
+/* Business Section */
+.businessSection {
+  padding: 120px 0;
+  background: #fff;
+}
+
+.businessInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
+.sectionHeader h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: 16px;
+}
+
+.sectionHeader p {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.businessGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.businessCard {
+  position: relative;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--duration-normal) var(--ease-out-quart);
+}
+
+.businessCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.businessCardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.businessCardIcon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.businessCardLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.businessCardContent h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.businessCardContent p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.businessCardArrow {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition: all var(--duration-fast) ease;
+}
+
+.businessCard:hover .businessCardArrow {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+.businessCardArrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* CTA Section */
+.ctaSection {
+  position: relative;
+  padding: 100px 0 120px;
+  background: linear-gradient(165deg, #0a0a0f 0%, #0d1117 30%, #161b22 70%, #0d1117 100%);
+  overflow: hidden;
+}
+
+.ctaGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ctaHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ctaLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+
+.ctaHeader h2 {
+  font-size: var(--text-3xl);
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.ctaHeader p {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.6);
+}
+
+.ctaCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ctaCard {
+  position: relative;
+  padding: 36px 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.ctaCard:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+}
+
+.ctaCard.owner:hover {
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(59, 130, 246, 0.3);
+}
+
+.ctaCard.partner:hover {
+  box-shadow: 0 20px 60px rgba(34, 197, 94, 0.2), 0 0 0 1px rgba(34, 197, 94, 0.3);
+}
+
+.ctaCard.investor:hover {
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2), 0 0 0 1px rgba(139, 92, 246, 0.3);
+}
+
+.ctaCardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+}
+
+.ctaCard.owner .ctaCardIcon {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.ctaCard.partner .ctaCardIcon {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.05) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.ctaCard.investor .ctaCardIcon {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.ctaCardIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.ctaCard.owner .ctaCardIcon svg { color: #3b82f6; }
+.ctaCard.partner .ctaCardIcon svg { color: #22c55e; }
+.ctaCard.investor .ctaCardIcon svg { color: #8b5cf6; }
+
+.ctaCardBody {
+  flex: 1;
+}
+
+.ctaCardTarget {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ctaCard.owner .ctaCardTarget { color: #3b82f6; }
+.ctaCard.partner .ctaCardTarget { color: #22c55e; }
+.ctaCard.investor .ctaCardTarget { color: #8b5cf6; }
+
+.ctaCardBody h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.ctaCardBody p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+
+.ctaCardArrow {
+  margin-top: 24px;
+  transition: transform 0.3s ease;
+}
+
+.ctaCard:hover .ctaCardArrow {
+  transform: translateX(6px);
+}
+
+.ctaCardArrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ctaCard.owner .ctaCardArrow { color: #3b82f6; }
+.ctaCard.partner .ctaCardArrow { color: #22c55e; }
+.ctaCard.investor .ctaCardArrow { color: #8b5cf6; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .heroKeywords {
+    justify-content: center;
+  }
+
+  .heroCta {
+    justify-content: center;
+  }
+
+  .heroVisual {
+    display: none;
+  }
+
+  .businessGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0 80px;
+  }
+
+  .heroInner {
+    padding: 0 20px;
+  }
+
+  .heroCta {
+    flex-direction: column;
+  }
+
+  .businessSection {
+    padding: 80px 0;
+  }
+
+  .ctaSection {
+    padding: 80px 0;
+  }
+
+  .ctaCard {
+    min-height: auto;
+    padding: 28px 24px;
+  }
+}
