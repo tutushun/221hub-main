@@ -1,0 +1,7 @@
+const ROUTER = {
+  isPathMode: (function() {
+    const host = window.location.hostname;
+    return host === '221hub.com' || host === 'www.221hub.com' || host.endsWith('.vercel.app');
+  })(),
+  ...
+}
